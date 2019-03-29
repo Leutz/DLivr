@@ -1,6 +1,8 @@
 {
   "name": "DLivr",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular",
   "id": "4da7fb0e"
 }
