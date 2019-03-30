@@ -1,0 +1,19 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button color="light"></ion-menu-button>
+      </ion-buttons>
+      <ion-title>SETTINGS</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content padding>
+  
+    <ion-menu-toggle>
+      <ion-button expand="full">Toggle Menu</ion-button>
+    </ion-menu-toggle>
+  
+    <ion-button expand="full" (click)="openMenu()">Open Menu</ion-button>
+    <ion-button expand="full" routerLink="/menu/settings">Go To Settings</ion-button>
+  </ion-content>
+  

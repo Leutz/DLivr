@@ -1,0 +1,16 @@
+ion-toolbar {
+    --ion-background-color:  rgb(53, 53, 53);
+}
+
+ion-title {
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bolder;
+    color: gray;
+}
+
+@media only screen and (max-width: 600px) {
+    ion-title {
+      padding-right: 15%;
+    }
+  }

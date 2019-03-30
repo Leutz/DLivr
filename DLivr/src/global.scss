@@ -9,3 +9,21 @@
 @import '~@ionic/angular/css/text-alignment.css';
 @import '~@ionic/angular/css/text-transformation.css';
 @import '~@ionic/angular/css/flex-utils.css';
+
+:root {
+    /* Set the background of the entire app */
+    --ion-background-color: #222222;
+  
+    
+    /* Set the font family of the entire app */
+    --ion-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+
+
+#sidenav{
+    --ion-background-color: #252525;
+}
+ion-button {
+    --ion-background-color: #ffb84d;
+}

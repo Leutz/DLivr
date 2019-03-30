@@ -1,0 +1,15 @@
+.active-item {
+    border-left: 8px solid rgb(255, 255, 255);
+    --ion-background-color: rgb(53, 53, 53);
+}
+
+ion-title {
+    text-align: center;
+    font-weight: bolder;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: gray;
+}
+
+/*ion-split-pane{
+    width: 80%;
+}*/
