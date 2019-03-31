@@ -1,0 +1,35 @@
+
+.backg{
+    width: 170%;
+}
+.ion-padding {
+    text-align: center;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-style: bold;
+    //background-color: rgba(255, 255, 255, 0.932); /* For browsers that do not support gradients */
+    background-image: linear-gradient(to left, rgba(37, 38, 63, 0.178), rgb(7, 0, 44));
+    //width: 90%;
+}
+$font:  "Palatino Linotype", "Book Antiqua", Palatino, serif;
+.title{
+    text-transform: uppercase;
+    line-height: 2em;
+    // text-align: center;
+    width: 80%;
+	background: linear-gradient(to right, rgb(46, 89, 230) 0%, #001044 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	font: {
+		size: 2.5vw;
+		family: $font;
+	};
+}
+.divider{
+    width:20px;
+    height:auto;
+    display:inline-block;
+}
+
+div {
+    padding: 4px;
+  }
