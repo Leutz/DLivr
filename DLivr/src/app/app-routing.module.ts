@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  { path: '#', loadChildren: './pages/menu/menu.module#MenuPageModule' },
+  { path: 'menu', loadChildren: './pages/menu/menu.module#MenuPageModule' },
   { path: 'login', loadChildren: './pages/login/login.module#LoginPageModule' },
 
 
