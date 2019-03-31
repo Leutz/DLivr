@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>D-Livr</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-app>
+<ion-content no-padding>
+
+  <ion-grid padding>
+
+    <ion-row justify-content-center>
+     <ion-col align-self-center size-md="6" size-lg= "5" size-xs="12">
+
+       <form [formGroup] ="loginForm">
+       <div text-center>
+          <h4> Log into your D-Livr account!</h4>
+       </div>
+
+        <div padding>
+
+          <ion-item>
+            <ion-icon name="person" ></ion-icon>
+            <ion-input type = "text" formControlName = "username" placeholder = "Username" required></ion-input>
+          </ion-item>
+
+         <ion-item>
+            <ion-icon name="lock"></ion-icon>
+            <ion-input type = "password" formControlName = "password" placeholder = "Password" required></ion-input>
+          </ion-item>
+        </div>
+        <a routerLink = "#"> Forgot your password? </a>
+        <div class = "login-box" padding>
+            <ion-button id = "login" [disabled] ="!loginForm.valid" size="large"  type = "submit" routerLink = "#" expand="block">Sign In</ion-button>
+           <ion-button id = "register" size="large"  color = "grey" type = "submit" expand="block" routerLink = "#">Create an account</ion-button>
+          </div>
+       </form>
+
+     </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
+</ion-app>
