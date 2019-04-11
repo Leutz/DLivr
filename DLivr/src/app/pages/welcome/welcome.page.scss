@@ -57,6 +57,7 @@ div {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: bolder;
     color: gray;
+   
 }
 .table {
 margin-left: 380px;
@@ -98,10 +99,10 @@ margin-left: 670px;
 
 .horizontal1{
     border-bottom: 0.3px solid gray;
-    width: 6%;
-  //  background-color: gray;
+    width: 10%;
+  //background-color: gray;
     margin-top: 150px;
-    margin-left: 590px;
+    margin-left: 490px;
     }
 .vertical1{
     border-left: 1px solid gray;
@@ -109,22 +110,21 @@ margin-left: 670px;
     width: 20%;
     margin-left: 0px;
     margin-top: -100px;
-        }
+    }
 .horizontal2{
     border-bottom: 0.3px solid gray;
-    width: 6%;
-    //  background-color: gray;
+    width: 10%;
+  //background-color: gray;
     margin-top: 150px;
     margin-left: -555px;
     }
 .vertical2{
-    
     border-left: 1px solid gray;
     height: 100px;
     width: 20%;
-    margin-left: -164px;
+    margin-left: -220px;
     margin-bottom: -100px;
-        }
+    }
 
   .firstCell{
   margin-left: 15px;
@@ -138,20 +138,93 @@ margin-left: 670px;
     width: 100%;
     margin-left: -290px;
     margin-bottom: 100px;
-   color: gray;
+    color: gray;
 }
 .thirdCell{
     width: 6%;
-    //  background-color: gray;
+  //background-color: gray;
     margin-left: 15px;
     margin-bottom: 10px;
-color: gray;
+    color: gray;
 }
 .fourthCell{
     height: 100px;
     width: 20%;
     margin-left: 40px;
     margin-bottom:  -100px;
-color: gray;
+    color: gray;
     }
-        
+
+    @media only screen and (max-width: 600px) {
+        .backg {
+            width: 126%;
+        }
+        .title{
+            margin-top: 10px;
+            margin-left: 20px;
+            font-size: 6vw;
+        }
+        .buton1{
+            font-size: 10px;
+            margin-top: 4px;
+        }
+        .divider{
+            width:10px;
+        }
+        .subtitle1{
+            line-height: 0.5em;
+            margin-left:78px;
+            font-size: 6vw;
+        }
+        .subtitle2{
+            margin-left: 66px;
+            font-size: 5.5vw;
+            padding-bottom: 0%;
+        }
+        div {
+            width: 100%;
+          }
+          .col{
+            margin-top: 85px;
+            }
+        .horizontal1{
+            width: 30%;
+          //background-color: gray;
+            margin-top: 15px;
+            margin-left: 30px;
+            }
+        .vertical1{
+            height: 60px;
+            width: 20%;
+            margin-left: 0px;
+            margin-top: 15px;
+            }
+        .horizontal2{
+            border-bottom: 0.3px solid gray;
+            width: 30%;
+          //background-color: gray;
+            margin-top: 15px;
+            margin-left: -80px;
+            }
+        .vertical2{
+            border-left: 1px solid gray;
+            height: 60px;
+            width: 20%;
+            margin-left: -121px;
+            margin-bottom: -60px;
+            }
+        .msj{
+            margin-left: 10px;
+            margin-top: 15px;
+            font-size: 5vw;
+            width: 80%;
+            }
+        .button3{
+            margin-top: 15px;
+            margin-left: 60px;
+        }
+        .footer1{
+            margin-left: 70px;
+            font-size: 4.5vw;
+            }
+      }
