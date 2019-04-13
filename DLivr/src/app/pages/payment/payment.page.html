@@ -16,35 +16,40 @@
 <ion-grid>
     <ion-row>
       <ion-col>
-          <ion-input placeholder="Card Number"><ion-icon name="card"></ion-icon>
-             <!-- <ion-icon name="camera" id="cameraIcon" ></ion-icon> -->
-          </ion-input> 
+          <ion-input id="cardNumber" placeholder="Card Number">
+            <ion-icon name="card"></ion-icon> 
+           </ion-input> 
+      
       </ion-col>
     </ion-row>
     <ion-row>
         <ion-col>
-            <ion-input placeholder="MM/YY" >
-              <!-- <ion-icon id="helpIcon" name="help" ></ion-icon> -->
-            </ion-input>  
-        </ion-col>
-        <ion-col>
+            <ion-input placeholder="MM/YY" ></ion-input>  
+          </ion-col>
+          <ion-col>
             <ion-input placeholder="CVV"></ion-input>
-              <!-- <ion-icon id="helpIcon" name="help" ></ion-icon> -->
-  
+    
         </ion-col>
       </ion-row>
       <ion-row>
-          <ion-col>
-              <ion-input >  <ion-icon name="flag"></ion-icon>
-                <ion-select placeholder="Country">
-                  
-                  <ion-select-option value="f">Romania</ion-select-option>
-                  <ion-select-option value="m">Portugal</ion-select-option>
-                  <ion-select-option value="m">Holland</ion-select-option>
-                  <ion-select-option value="m">USA</ion-select-option>
-                </ion-select>
-              </ion-input>
-          </ion-col>
+          <ion-col id="searchable">
+            <div class="inline">
+    
+          <ion-icon name="flag"></ion-icon>
+        </div>
+        <div class="inline">
+          <ion-select placeholder="Country">
+
+          <ion-select-option >Holland</ion-select-option>
+          <ion-select-option >Portugal</ion-select-option>
+          <ion-select-option >Romania</ion-select-option>
+          <ion-select-option >Ungary</ion-select-option>
+          <ion-select-option >USA</ion-select-option>
+          
+          </ion-select>
+      </div>
+              </ion-col>
+  
         </ion-row>
         <ion-row>
             <ion-col>
@@ -55,37 +60,29 @@
              <br/>
             </ion-row>
             <ion-row>
+              <p id="pCardNumber">Incorrect card number length</p>
+            </ion-row>
+            <ion-row>
                 <ion-col class="centered">
-                    <ion-button id="save" (click)="next()"  fill="clear" >Save</ion-button>
+                    <ion-button id="save" (click)="save()"  fill="clear" >Save</ion-button>
                     <ion-button id="cancel" (click)="cancel()"  fill="clear" >Cancel</ion-button>
                 </ion-col>
 
-               </ion-row>
+            </ion-row>
 
   </ion-grid>
 
-
   </div>
 
+<br/>
 
-    <ion-list id="cards">
+<div id="cards">
+    <ion-list >
         <!-- <ion-item>
           <ion-label routerLink="#" >**** 3369</ion-label>
         </ion-item> -->
     </ion-list>
    
-      
+</div>
+    
   </ion-content>
-
-
-<!-- 
-  <script type="text/javascript">
-
-  var list = document.getElementById('cards');
-  var firstname = document.getElementById('firstname').value;
-  var entry = document.createElement('ion-item');
-  entry.appendChild(document.createTextNode(firstname));
-  list.appendChild(entry);
-
-</script> -->
-  

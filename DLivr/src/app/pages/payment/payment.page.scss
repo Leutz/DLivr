@@ -18,6 +18,10 @@ h3{
    margin: auto;
 }
 
+#pCardNumber{
+    color: red;
+    display: none;
+}
 .centered{
     text-align: center;
 }
@@ -25,6 +29,10 @@ h3{
 #formular{
     color: gray;
     display: none;
+}
+
+#cards{
+    color: gray;
 }
 
 ion-title {
@@ -40,18 +48,17 @@ ion-item {
     color: rgba(110, 110, 110, 0.815);
 }
 
-#cameraIcon{
-    font-size: 12px;
-    margin-left: 120px;
-}
-
 #helpIcon{
     font-size: 12px;
-    margin-left: 120px;
+    //margin-left: 10px;
 }
 
-ion-input{
+ion-input, #searchable{
     border-bottom:  1px solid grey;
+}
+
+.inline {
+    display: inline-block;
 }
 
 ion-grid{
