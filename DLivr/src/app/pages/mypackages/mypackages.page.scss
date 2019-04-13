@@ -1,0 +1,153 @@
+$height100 : 100%;
+$green-color: rgb(77, 206, 77);
+
+ion-content{
+    align-content: center;
+}
+
+ion-toolbar {
+    --ion-background-color:  rgb(53, 53, 53);
+}
+
+#addbutton{
+    --ion-background-color:rgb(36,35,35);
+    margin-bottom: 30px;
+}
+
+ion-title{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bolder;
+    color: gray;
+    text-align: center;
+ }
+
+ 
+ion-grid {
+    width:100%;
+    height: $height100;
+    background: rgb(36, 35, 35);
+}
+
+ion-card-title{
+    color: rgb(223, 223, 223);
+}
+
+ion-card{
+    background: rgb(79, 79, 212);
+    height: 25%;
+}
+
+ion-item{
+    background: rgb(79, 79, 212);
+}
+
+ion-card-content{
+    margin-top: -15px;
+    color: rgb(223, 223, 223);
+}
+ion-card-header{
+    background: rgb(79, 79, 212);
+}
+
+#addPackageItem{
+    background: rgb(92, 92, 92);
+}
+
+#addPackageHeader{
+    background: rgb(92, 92, 92);
+}
+
+p{
+    color: rgb(223, 223, 223);
+    text-align: center;
+    font-size: 13px;
+}
+
+#count{
+    font-size: 30px;
+    margin-right: 10px;
+    margin-left: 10px;
+    font-style: 'Segoe UI';
+    color:rgba(49, 49, 49, 0.664);
+}
+
+#addpackage{
+    width: 25%;
+    background: $green-color;
+    color: black;
+    border-radius: 10px;
+    font-weight: 25%;
+}
+
+
+#addButton{
+    display: flex;
+    justify-content: center;
+}
+
+
+#formtext{
+    font-size: 15px;
+    text-align: left;
+}
+
+#availableTime{
+    font-size: 15px;
+    text-align: left;
+    margin: 0px;
+    margin-left: 20px;
+}
+
+#hourbutton{
+    --ion-background-color:rgb(36,35,35);
+}
+
+#timeItem{
+    background: rgb(92, 92, 92);
+}
+
+#timeContent{
+    background: rgb(92, 92, 92);
+}
+
+#timeP{
+    font-size: 15px;
+    text-align: left;
+    margin-top: 15px;
+}
+
+ion-input, ion-item{
+    --background:  rgb(255, 255, 255);
+}
+
+#timeItem2
+{
+    --background: rgb(92, 92, 92);
+    color: white;
+}
+
+@media only screen and (max-width: 700px) {
+   #addpackage{
+       width: 50%;
+   }
+
+} 
+
+
+#addPackage ion-card{
+    height: 100%;
+    background: rgb(92, 92, 92);
+}
+
+#editPackageCard {
+    height:100%;
+    background: rgb(92, 92, 92);
+}
+
+#editPackageItem{
+    background: rgb(92, 92, 92);
+}
+
+#editPackageHeader{
+    background: rgb(92, 92, 92);
+}

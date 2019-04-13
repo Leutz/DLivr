@@ -19,13 +19,18 @@ const routes: Routes = [
         {
           path: 'settings',
           loadChildren: '../settings/settings.module#SettingsPageModule'
+        },
+        {
+          path: 'mypackages',
+          loadChildren: '../mypackages/mypackages.module#MypackagesPageModule'
         }
     ]
-  },
-  {
-    path: '',
-    redirectTo : '/menu/home'
   }
+  //,
+  //{
+  //  path: '',
+  //  redirectTo : '/menu/home'
+  //}
 ];
 
 @NgModule({
