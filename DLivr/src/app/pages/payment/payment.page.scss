@@ -2,8 +2,25 @@ ion-toolbar {
     --ion-background-color:  rgb(53, 53, 53);
 }
 
-ion-button{
+// ion-button{
+//     float: right;
+// }
+
+#addCard{
     float: left;
+}
+
+#save,#cancel{
+   margin: auto;
+}
+
+.centered{
+    text-align: center;
+}
+
+#formular{
+    color: gray;
+    display: none;
 }
 
 ion-title {
@@ -17,6 +34,24 @@ ion-item {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: bolder;
     color: rgba(110, 110, 110, 0.815);
+}
+
+#cameraIcon{
+    font-size: 12px;
+    margin-left: 120px;
+}
+
+#helpIcon{
+    font-size: 12px;
+    margin-left: 120px;
+}
+
+ion-input{
+    border-bottom:  1px solid grey;
+}
+
+ion-grid{
+    color:grey;
 }
 
 @media only screen and (max-width: 600px) {

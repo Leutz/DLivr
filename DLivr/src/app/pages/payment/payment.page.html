@@ -6,16 +6,86 @@
       <ion-title>PAYMENT</ion-title>
     </ion-toolbar>
   </ion-header>
-  
+
   <ion-content padding>
     
-  <ion-button expand="full" fill="clear" >Add Card</ion-button>
-      
-    <ion-list>
+  <ion-button id="addCard" (click)="go()" expand="full" fill="clear" >Add Card</ion-button>
+
+  <div id="formular">
+<br/>
+<ion-grid>
+    <ion-row>
+      <ion-col>
+          <ion-input placeholder="Card Number"><ion-icon name="card"></ion-icon>
+             <!-- <ion-icon name="camera" id="cameraIcon" ></ion-icon> -->
+          </ion-input> 
+      </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col>
+            <ion-input placeholder="MM/YY" >
+              <!-- <ion-icon id="helpIcon" name="help" ></ion-icon> -->
+            </ion-input>  
+        </ion-col>
+        <ion-col>
+            <ion-input placeholder="CVV"></ion-input>
+              <!-- <ion-icon id="helpIcon" name="help" ></ion-icon> -->
+  
+        </ion-col>
+      </ion-row>
+      <ion-row>
+          <ion-col>
+              <ion-input >  <ion-icon name="flag"></ion-icon>
+                <ion-select placeholder="Country">
+                  
+                  <ion-select-option value="f">Romania</ion-select-option>
+                  <ion-select-option value="m">Portugal</ion-select-option>
+                  <ion-select-option value="m">Holland</ion-select-option>
+                  <ion-select-option value="m">USA</ion-select-option>
+                </ion-select>
+              </ion-input>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <ion-input placeholder="Zip Code"></ion-input>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+             <br/>
+            </ion-row>
+            <ion-row>
+                <ion-col class="centered">
+                    <ion-button id="save" (click)="next()"  fill="clear" >Save</ion-button>
+                    <ion-button id="cancel" (click)="cancel()"  fill="clear" >Cancel</ion-button>
+                </ion-col>
+
+               </ion-row>
+
+  </ion-grid>
+
+
+  </div>
+
+
+    <ion-list id="cards">
         <!-- <ion-item>
           <ion-label routerLink="#" >**** 3369</ion-label>
         </ion-item> -->
     </ion-list>
+   
       
   </ion-content>
+
+
+<!-- 
+  <script type="text/javascript">
+
+  var list = document.getElementById('cards');
+  var firstname = document.getElementById('firstname').value;
+  var entry = document.createElement('ion-item');
+  entry.appendChild(document.createTextNode(firstname));
+  list.appendChild(entry);
+
+</script> -->
   
