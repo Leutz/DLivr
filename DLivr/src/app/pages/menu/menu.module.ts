@@ -19,6 +19,10 @@ const routes: Routes = [
         {
           path: 'settings',
           loadChildren: '../settings/settings.module#SettingsPageModule'
+        },
+        {
+          path: 'payment',
+          loadChildren: '../payment/payment.module#PaymentPageModule'
         }
     ]
   },
