@@ -28,6 +28,7 @@ export class PaymentPage implements OnInit {
   }
 
   cancel(){
+    
     var x = document.getElementById("formular");
     var y = document.getElementById("addCard");
 
