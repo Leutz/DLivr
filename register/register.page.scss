@@ -1,0 +1,70 @@
+$white-color: #fff;
+$grey-color: rgb(92, 92, 92);
+$height100: 100%;
+
+ion-content{
+    align-content: center;
+}
+
+ion-toolbar {
+    --ion-background-color:  rgb(53, 53, 53);
+}
+
+ion-title{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bolder;
+    color: gray;
+ }
+
+ion-grid {
+    width:100%;
+    height: $height100;
+    background: rgb(36, 35, 35);
+}
+
+ion-row {
+    height: $height100;
+}
+
+ion-col {
+    border: 1px solid #488aff;
+    background: $white-color;
+}
+
+a{
+    text-decoration: none;
+    margin-left: 20px;
+    font-style: italic;
+    color: rgb(196, 196, 196);
+}
+
+ion-button {
+    font-weight: 300;
+}
+
+ion-input, ion-item{
+    --background:  rgb(255, 255, 255);
+}
+
+ion-input{
+    margin-left: 20px;
+}
+
+
+.create-account-box, .register-box{
+    text-align: center;
+}
+
+
+.register-box #login{
+    background: $grey-color;
+}
+
+@media (min-width: 240px) and (max-width: 768px) {
+    ion-grid {
+        background: $white-color;
+    }
+    ion-col {
+        border: none;
+    }
+} 
