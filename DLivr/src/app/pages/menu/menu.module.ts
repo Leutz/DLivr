@@ -26,11 +26,11 @@ const routes: Routes = [
         }
     ]
   }
-  //,
-  //{
-  //  path: '',
-  //  redirectTo : '/menu/home'
-  //}
+ ,
+  {
+    path: '',
+    redirectTo : '/menu/home'
+  }
 ];
 
 @NgModule({
