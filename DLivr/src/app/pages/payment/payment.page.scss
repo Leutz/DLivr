@@ -1,0 +1,73 @@
+ion-toolbar {
+    --ion-background-color:  rgb(53, 53, 53);
+}
+
+// ion-button{
+//     float: right;
+// }
+
+h3{
+    color: grey;
+}
+
+#addCard{
+    float: left;
+}
+
+#save,#cancel{
+   margin: auto;
+}
+
+#pCardNumber{
+    color: red;
+    display: none;
+}
+.centered{
+    text-align: center;
+}
+
+#formular{
+    color: gray;
+    display: none;
+}
+
+#cards{
+    color: gray;
+}
+
+ion-title {
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bolder;
+    color: gray;
+}
+
+ion-item {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bolder;
+    color: rgba(110, 110, 110, 0.815);
+}
+
+#helpIcon{
+    font-size: 12px;
+    //margin-left: 10px;
+}
+
+ion-input, #searchable{
+    border-bottom:  1px solid grey;
+}
+
+.inline {
+    display: inline-block;
+}
+
+ion-grid{
+    color:grey;
+}
+
+@media only screen and (max-width: 600px) {
+    ion-title {
+      padding-right: 15%;
+    }
+
+  }

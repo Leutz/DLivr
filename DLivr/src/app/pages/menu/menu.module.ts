@@ -23,6 +23,10 @@ const routes: Routes = [
         {
           path: 'mypackages',
           loadChildren: '../mypackages/mypackages.module#MypackagesPageModule'
+        },
+        {
+          path: 'payment',
+          loadChildren: '../payment/payment.module#PaymentPageModule'
         }
     ]
   }
