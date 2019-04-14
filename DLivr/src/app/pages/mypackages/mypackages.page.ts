@@ -36,6 +36,7 @@ export class MypackagesPage implements OnInit {
 
   addPackageButton(){
     
+    var divNoPackage = document.getElementById("text");
     var divAdd = document.getElementById("addPackage");
     var buttonAdd = document.getElementById("addpackage");
     
@@ -45,6 +46,7 @@ export class MypackagesPage implements OnInit {
 
     if (buttonAdd.textContent == "Add Package")
     {
+      divNoPackage.style.display = "none";
       divAdd.style.display = "block";
       buttonAdd.textContent = "Confirm";
     }
