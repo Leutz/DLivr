@@ -24,10 +24,10 @@
     </ion-row>
     <ion-row>
         <ion-col>
-            <ion-input placeholder="MM/YY" ></ion-input>  
+            <ion-input id="date" placeholder="MM/YY" ></ion-input>  
           </ion-col>
           <ion-col>
-            <ion-input placeholder="CVV"></ion-input>
+            <ion-input  id="cvv" placeholder="CVV"></ion-input>
     
         </ion-col>
       </ion-row>
@@ -38,7 +38,7 @@
           <ion-icon name="flag"></ion-icon>
         </div>
         <div class="inline">
-          <ion-select placeholder="Country">
+          <ion-select  id="country" placeholder="Country">
 
           <ion-select-option >Holland</ion-select-option>
           <ion-select-option >Portugal</ion-select-option>
@@ -53,7 +53,7 @@
         </ion-row>
         <ion-row>
             <ion-col>
-                <ion-input placeholder="Zip Code"></ion-input>
+                <ion-input id="zipcode" placeholder="Zip Code"></ion-input>
             </ion-col>
           </ion-row>
           <ion-row>
@@ -77,12 +77,7 @@
 <br/>
 
 <div id="cards">
-    <ion-list >
-        <!-- <ion-item>
-          <ion-label routerLink="#" >**** 3369</ion-label>
-        </ion-item> -->
-    </ion-list>
-   
+
 </div>
     
   </ion-content>

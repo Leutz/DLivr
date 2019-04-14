@@ -38,17 +38,20 @@ export class PaymentPage implements OnInit {
      w.style.display = "none";
 
      (<HTMLInputElement>document.getElementById('cardNumber')).value= "";
+     (<HTMLInputElement>document.getElementById('date')).value= "";
+     (<HTMLInputElement>document.getElementById('cvv')).value= "";
+     (<HTMLInputElement>document.getElementById('country')).value= "";
+     (<HTMLInputElement>document.getElementById('zipcode')).value= "";
      
   }
 
   save(){
     var x = document.getElementById("formular");
     var y = document.getElementById("addCard");
-    var z = document.getElementById("cards");
     var w = document.getElementById("pCardNumber");
     var str1 = "**** ";
 
-      var listOfCard = document.getElementById('cards');
+      var listOfCards = document.getElementById('cards');
       var cardNr = (<HTMLInputElement>document.getElementById('cardNumber')).value;
 
       if(cardNr && cardNr.length==19){
@@ -56,18 +59,24 @@ export class PaymentPage implements OnInit {
         var result = str1.concat(subst4);
         var entry = document.createElement('ion-item');
         entry.appendChild(document.createTextNode(result));
-        listOfCard.appendChild(entry);
+        entry.style.color = "grey";
+        listOfCards.appendChild(entry);
 
         x.style.display = "none";
         y.style.display = "block";
-        z.style.display = "block";
+        listOfCards.style.display = "block";
         w.style.display = "none";
         (<HTMLInputElement>document.getElementById('cardNumber')).value= "";
+        (<HTMLInputElement>document.getElementById('date')).value= "";
+        (<HTMLInputElement>document.getElementById('cvv')).value= "";
+        (<HTMLInputElement>document.getElementById('country')).value= "";
+        (<HTMLInputElement>document.getElementById('zipcode')).value= "";
+       
 
       }else{
         x.style.display = "block";
         y.style.display = "none";
-        z.style.display = "none";
+        listOfCards.style.display = "none";
         w.style.display = "block";
       }
     
