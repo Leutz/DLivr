@@ -77,7 +77,7 @@
       </ion-col>
     </ion-row>
 
-  <div id = "addPackage" >
+  <div id = "addPackage" style="display: none;">
       <ion-row>
           <ion-col>
               <ion-card>                
@@ -209,7 +209,6 @@
                                 Status: &lt;state***&gt;
                             </ion-card-content>
   
-  
                           </ion-label>
                       </ion-item>
   
@@ -288,11 +287,10 @@
                                     </ion-item>
                                 
                                     <ion-button id="addpickuphour" (click)="addPickupHour()" type = "submit"expand="block">Add Pickup Hour</ion-button>
-  
+                                    <ion-button id="cancelEdit" color ="--ion-color-success-shade" (click)="cancelEdit()" type = "submit"expand="block">Cancel Edit</ion-button>
                           </ion-col>
                         </ion-row>
-                       
-                    </ion-card>
+                      </ion-card>
          
                     <div id ="text">
                         <p> *The driver will also receive your contact information, so he can contact you for needed details </p>
@@ -303,15 +301,12 @@
        </div>
   </ion-grid>
 
-
-
   </ion-content>
-
 
   <ion-footer no-border >
       <ion-toolbar id="addbutton">
           <div id ="addButton" padding>
-              <ion-button id="addpackage" color ="--ion-color-success-shade" (click)="changeButton()" expand="block" size="large"  type = "submit" routerLink = "#" expand="block" value="Add Package">Add Package</ion-button>
+              <ion-button id="addpackage" color ="--ion-color-success-shade" (click)="addPackageButton()" expand="block" size="large"  type = "submit" expand="block" value="Add Package">Add Package</ion-button>
            </div>
 
      </ion-toolbar>
