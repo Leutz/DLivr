@@ -8,6 +8,14 @@ import { MenuController } from '@ionic/angular';
 })
 export class MypackagesPage implements OnInit {
 
+  packages = [];
+
+  name: string = "";
+  pickupAddress: string = "";
+  deliveryAddress: string = "";
+  receiverName: string = "";
+  receiverPhoneNumber: string = "";
+
   constructor(private menuCtrl: MenuController) { 
   }
 
@@ -31,7 +39,6 @@ export class MypackagesPage implements OnInit {
     var divAdd = document.getElementById("addPackage");
     var buttonAdd = document.getElementById("addpackage");
     
-    console.log("hello I have the horse teeth");
     console.log(buttonAdd.textContent);
 
     this.closeExistingPackage();
@@ -44,6 +51,21 @@ export class MypackagesPage implements OnInit {
     else
     {
       buttonAdd.textContent = "Add Package";
+
+      var nameInput = document.getElementById("nameInput");
+      var pickupAddressInput = document.getElementById("pickupAddressInput");
+      var deliveryAddressInput = document.getElementById("deliveryAddressInput");
+
+      var receiverName = document.getElementById("receiverName");
+      var receiverPhoneNumber = document.getElementById("receiverPhoneNumber");
+
+      this.pushCard(
+        this.name, 
+        this.pickupAddress,
+        this.deliveryAddress,
+        this.receiverName,
+        this.receiverPhoneNumber
+      );
     }
   }
 
@@ -66,4 +88,40 @@ export class MypackagesPage implements OnInit {
 
     buttonEdit.textContent = "Add Package"
   }
+
+  pushCard(name, pickupAddress, deliveryAddress, receivedName, receiverPhoneNumber){
+
+    console.log("Name: " + name);
+
+    this.packages.push(
+      {
+        "number": (this.packages.length + 1).toString(),
+        "name": name,
+        "status": "",
+        "pickupAddress": pickupAddress,
+        "deliveryAddress": deliveryAddress,
+        "receivedName": receivedName,
+        "receiverPhoneNumber": receiverPhoneNumber,
+        //"pickupHours": pickupHours,
+      }
+    );
+    
+    this.name = "";
+    this.pickupAddress = "";
+    this.deliveryAddress = "";
+    this.receiverName = "";
+    this.receiverPhoneNumber = "";
+  }
+
+  /*functionDO(){
+    this.packages.push(
+      {
+        "number": (this.packages.length + 1).toString(),
+        "name": "<Name>",
+        "status": "<Status>",
+
+        // etc stuff here
+      }
+    )
+  }*/
 }

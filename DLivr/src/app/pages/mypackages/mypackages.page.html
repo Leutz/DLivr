@@ -12,8 +12,27 @@
     <ion-grid id ="myPackages">
   
     <ion-row>
-      <ion-col>
-          <ion-card>
+      <ion-col id = "cardList">
+        <ion-card *ngFor = "let package of packages">
+          <ion-item  lines="none" color="red">
+            <p id ="count" > {{package.number}} </p>
+            <ion-label>     
+              <ion-card-header>
+                <ion-card-title> {{package.name}} </ion-card-title>
+              </ion-card-header>
+
+              <ion-card-content>
+                Status: {{package.status}}
+              </ion-card-content>
+            </ion-label>
+
+            <ion-button item-right slot="end" (click)="editPackageForm()">
+              <ion-icon name="create"></ion-icon>
+            </ion-button>
+          </ion-item>
+        </ion-card>
+
+          <!--<ion-card>
               <ion-item  lines="none" color="red">
                 <p id ="count" > 1 </p>
                 <ion-label>     
@@ -68,7 +87,7 @@
                           <ion-icon name="create"></ion-icon>
                       </ion-button>
                   </ion-item>
-                </ion-card>
+                </ion-card>-->
   
                 <div id ="text">
                   <p> ***(waiting for pickup / picked up / delivering / delivered / canceled / reported) </p>
@@ -82,15 +101,15 @@
           <ion-col>
               <ion-card>                
                   <ion-item id="addPackageItem" lines="none" color ="red">
-                      <p id ="count" > 4 </p>
+                    <p id ="count" > {{packages.length + 1}} </p>
                      <ion-label>     
                          <ion-card-header id ="addPackageHeader">
                              <ion-card-title> &lt;Name&gt; </ion-card-title>
                            </ion-card-header>
                             
-                          <ion-card-content>
+                          <!--<ion-card-content>
                               Status: &lt;state***&gt;
-                          </ion-card-content>
+                          </ion-card-content>-->
 
 
                         </ion-label>
@@ -102,29 +121,29 @@
 
                           <p id = "formtext">Package Name </p> 
                           <ion-item class ="itemform">
-                            <ion-input type = "text" placeholder = "Package Name" required></ion-input>
+                            <ion-input id = "nameInput" [(ngModel)]="name" [ngModelOptions]="{standalone: true}" type = "text" placeholder = "Package Name" required></ion-input>
                           </ion-item>
 
             
                            <p id = "formtext">Pickup Address</p> 
                         
                           <ion-item class ="itemform">
-                            <ion-input type = "text" placeholder = "Pickup Adress" required></ion-input>
+                            <ion-input id = "pickupAddressInput" [(ngModel)]="pickupAddress" [ngModelOptions]="{standalone: true}" type = "text" placeholder = "Pickup Address" required></ion-input>
                           </ion-item>
                  
                           <p id = "formtext">Delivery Address </p> 
                           <ion-item>
-                            <ion-input type = "text" placeholder = "Deliver Adress" required></ion-input>
+                            <ion-input id = "deliveryAddressInput" [(ngModel)]="deliveryAddress" [ngModelOptions]="{standalone: true}" type = "text" placeholder = "Delivery Address" required></ion-input>
                           </ion-item>
 
                           <p id = "formtext">Receiver's Full Name </p> 
                           <ion-item>
-                            <ion-input type = "text" placeholder = "Receiver's Full Name" required></ion-input>
+                            <ion-input id = "receiverName" [(ngModel)]="receiverName" type = "text" [ngModelOptions]="{standalone: true}" placeholder = "Receiver's Full Name" required></ion-input>
                           </ion-item>
 
                           <p id = "formtext">Receiver's Phone Number </p> 
                           <ion-item>
-                            <ion-input type = "text" placeholder = "Receiver's Phone Number" required></ion-input>
+                            <ion-input id = "receiverPhoneNumber" [(ngModel)]="receiverPhoneNumber" [ngModelOptions]="{standalone: true}" type = "text" placeholder = "Receiver's Phone Number" required></ion-input>
                           </ion-item>
 
                          </div>
@@ -146,7 +165,7 @@
                                       <ion-card-content id ="timeContent">
                             
                                           <ion-item id ="timeItem2">
-                                              <ion-datetime displayFormat="MMMM DDDD," placeholder="Select Day"></ion-datetime>
+                                              <ion-datetime displayFormat="MMMM DD, DDDD" placeholder="Select Day"></ion-datetime>
                                               <ion-datetime displayFormat="HH:mm - "  placeholder="Select Start Hour"></ion-datetime>
                                               <ion-datetime displayFormat=" HH:mm "  placeholder="Select End Hour"></ion-datetime>
                                             </ion-item>
@@ -200,26 +219,22 @@
 
                     <ion-item id="editPackageItem" lines="none" color ="red">
                         <p id ="count" > 1 </p>
-                       <ion-label>     
+                        <ion-label>     
                            <ion-card-header id ="editPackageHeader">
-                               <ion-card-title> &lt;Name&gt; </ion-card-title>
+                               <ion-card-title> name  </ion-card-title>
                              </ion-card-header>
                               
-                            <ion-card-content>
-                                Status: &lt;state***&gt;
-                            </ion-card-content>
+                            <ion-card-content> state </ion-card-content>
   
                           </ion-label>
                       </ion-item>
   
                       <form >
-                           <div padding>
-                   
-  
-                            <p id = "formtext">Package Name </p> 
-                            <ion-item class ="itemform">
-                              <ion-input type = "text" placeholder = "Package Name" value = "$Name" required></ion-input>
-                            </ion-item>
+                        <div padding>
+                          <p id = "formtext">Package Name </p> 
+                          <ion-item class ="itemform">
+                            <ion-input type = "text" placeholder = "Package Name" value = "$Name" required></ion-input>
+                          </ion-item>
   
               
                              <p id = "formtext">Pickup Address</p> 
@@ -255,7 +270,7 @@
                                         <ion-card-content id ="timeContent">
                               
                                             <ion-item id ="timeItem2">
-                                                <ion-datetime displayFormat="MMMM DDDD," value="2019-01-20" placeholder="Select Day"></ion-datetime>
+                                                <ion-datetime displayFormat="MMMM DD, DDDD" value="2019-01-20" placeholder="Select Day"></ion-datetime>
                                                 <ion-datetime displayFormat="HH:mm - " value="12:20" placeholder="Select Start Hour"></ion-datetime>
                                                 <ion-datetime displayFormat=" HH:mm " value ="15:40" placeholder="Select End Hour"></ion-datetime>
                                               </ion-item>
@@ -273,7 +288,7 @@
                                           <ion-card-content id ="timeContent">
                                 
                                               <ion-item id ="timeItem2">
-                                                  <ion-datetime displayFormat="MMMM DDDD," value="2019-12-15" placeholder="Select Day"></ion-datetime>
+                                                  <ion-datetime displayFormat="MMMM DD, DDDD" value="2019-12-15" placeholder="Select Day"></ion-datetime>
                                                   <ion-datetime displayFormat="HH:mm - " value="12:20" placeholder="Select Start Hour"></ion-datetime>
                                                   <ion-datetime displayFormat=" HH:mm " value ="15:40" placeholder="Select End Hour"></ion-datetime>
                                                 </ion-item>
@@ -304,6 +319,7 @@
   </ion-content>
 
   <ion-footer no-border >
+   
       <ion-toolbar id="addbutton">
           <div id ="addButton" padding>
               <ion-button id="addpackage" color ="--ion-color-success-shade" (click)="addPackageButton()" expand="block" size="large"  type = "submit" expand="block" value="Add Package">Add Package</ion-button>
