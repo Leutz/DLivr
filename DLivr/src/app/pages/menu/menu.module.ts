@@ -19,9 +19,18 @@ const routes: Routes = [
         {
           path: 'settings',
           loadChildren: '../settings/settings.module#SettingsPageModule'
+        },
+        {
+          path: 'mypackages',
+          loadChildren: '../mypackages/mypackages.module#MypackagesPageModule'
+        },
+        {
+          path: 'payment',
+          loadChildren: '../payment/payment.module#PaymentPageModule'
         }
     ]
-  },
+  }
+ ,
   {
     path: '',
     redirectTo : '/menu/home'

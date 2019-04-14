@@ -1,0 +1,88 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button color="light"></ion-menu-button>
+      </ion-buttons>
+      <ion-title>PAYMENT</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content padding>
+    
+  <ion-button id="addCard" (click)="go()" expand="full" fill="clear" >Add Card</ion-button>
+
+  <div id="formular">
+    <h6>Enter card details</h6>
+<ion-grid>
+    <ion-row>
+      <ion-col>
+          <ion-input id="cardNumber" placeholder="Card Number">
+            <ion-icon name="card"></ion-icon> 
+           </ion-input> 
+      
+      </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col>
+            <ion-input placeholder="MM/YY" ></ion-input>  
+          </ion-col>
+          <ion-col>
+            <ion-input placeholder="CVV"></ion-input>
+    
+        </ion-col>
+      </ion-row>
+      <ion-row>
+          <ion-col id="searchable">
+            <div class="inline">
+    
+          <ion-icon name="flag"></ion-icon>
+        </div>
+        <div class="inline">
+          <ion-select placeholder="Country">
+
+          <ion-select-option >Holland</ion-select-option>
+          <ion-select-option >Portugal</ion-select-option>
+          <ion-select-option >Romania</ion-select-option>
+          <ion-select-option >Ungary</ion-select-option>
+          <ion-select-option >USA</ion-select-option>
+          
+          </ion-select>
+      </div>
+              </ion-col>
+  
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <ion-input placeholder="Zip Code"></ion-input>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+             <br/>
+            </ion-row>
+            <ion-row>
+              <p id="pCardNumber">Incorrect card number length</p>
+            </ion-row>
+            <ion-row>
+                <ion-col class="centered">
+                    <ion-button id="save" (click)="save()"  fill="clear" >Save</ion-button>
+                    <ion-button id="cancel" (click)="cancel()"  fill="clear" >Cancel</ion-button>
+                </ion-col>
+
+            </ion-row>
+
+  </ion-grid>
+
+  </div>
+
+<br/>
+
+<div id="cards">
+    <ion-list >
+        <!-- <ion-item>
+          <ion-label routerLink="#" >**** 3369</ion-label>
+        </ion-item> -->
+    </ion-list>
+   
+</div>
+    
+  </ion-content>
