@@ -37,6 +37,7 @@ export class MypackagesPage implements OnInit {
   addPackageButton(){
     
     var divNoPackage = document.getElementById("text");
+    var divDriverText = document.getElementById("textDriver")
     var divAdd = document.getElementById("addPackage");
     var buttonAdd = document.getElementById("addpackage");
     
@@ -49,11 +50,13 @@ export class MypackagesPage implements OnInit {
       divNoPackage.style.display = "none";
       divAdd.style.display = "block";
       buttonAdd.textContent = "Confirm";
+      divDriverText.style.display = "block";
     }
     else
     {
       buttonAdd.textContent = "Add Package";
-
+      divDriverText.style.display = "none";
+      
       var nameInput = document.getElementById("nameInput");
       var pickupAddressInput = document.getElementById("pickupAddressInput");
       var deliveryAddressInput = document.getElementById("deliveryAddressInput");

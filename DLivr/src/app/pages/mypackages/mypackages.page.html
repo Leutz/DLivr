@@ -8,322 +8,218 @@
   </ion-header>
   
   <ion-content >
-    
     <ion-grid id ="myPackages">
   
     <ion-row>
       <ion-col id = "cardList">
-        <ion-card *ngFor = "let package of packages">
-          <ion-item  lines="none" color="red">
-            <p id ="count" > {{package.number}} </p>
-            <ion-label>     
+        <ion-card *ngFor = "let package of packages" id = "ion-card-id-package">
+          <ion-card-content no-padding>
+          <ion-item id="cardListItem" lines="none" color="blue">
+            <p class ="count" > {{package.number}} </p>
+            <ion-label id ="cardListLabel">     
               <ion-card-header>
                 <ion-card-title> {{package.name}} </ion-card-title>
               </ion-card-header>
 
-              <ion-card-content>
-                Status: {{package.status}} ***status
-              </ion-card-content>
+              <ion-card-content> Status: {{package.status}} ***status </ion-card-content>
             </ion-label>
 
-            <ion-button item-right slot="end" (click)="editPackageForm()">
+            <ion-button id = "ionButtonIcon" color ="--ion-color-success-shade" item-right slot="end" (click)="editPackageForm()">
               <ion-icon name="create"></ion-icon>
             </ion-button>
-          </ion-item>
+           </ion-item>
+          </ion-card-content>
         </ion-card>
-
-          <!--<ion-card>
-              <ion-item  lines="none" color="red">
-                <p id ="count" > 1 </p>
-                <ion-label>     
-                    <ion-card-header>
-                        <ion-card-title> &lt;Name&gt; </ion-card-title>
-                      </ion-card-header>
-                      
-                    <ion-card-content>
-                        Status: &lt;state***&gt;
-                    </ion-card-content>
-                  </ion-label>
-
-                  <ion-button item-right slot="end" (click)="editPackageForm()">
-                      <ion-icon name="create"></ion-icon>
-                  </ion-button>
-
-              </ion-item>
-            </ion-card>
-            
-            <ion-card>
-                <ion-item  lines="none" color ="red">
-                    <p id ="count" > 2 </p>
-                  <ion-label>     
-                      <ion-card-header>
-                          <ion-card-title> &lt;Name&gt; </ion-card-title>
-                        </ion-card-header>
-                        
-                      <ion-card-content>
-                          Status: &lt;state***&gt;
-                      </ion-card-content>
-                    </ion-label>
-
-                    <ion-button item-right slot="end" (click)="editPackageForm()">
-                        <ion-icon name="create"></ion-icon>
-                    </ion-button>
-                </ion-item>
-              </ion-card>
-
-              <ion-card>
-                  <ion-item  lines="none" color = "red">
-                      <p id ="count" > 3 </p>
-                    <ion-label>     
-                        <ion-card-header>
-                            <ion-card-title> &lt;Name&gt; </ion-card-title>
-                          </ion-card-header>
-                          
-                        <ion-card-content>
-                            Status: &lt;state***&gt;
-                        </ion-card-content>
-                      </ion-label>
-                      <ion-button item-right slot="end" (click)="editPackageForm()">
-                          <ion-icon name="create"></ion-icon>
-                      </ion-button>
-                  </ion-item>
-                </ion-card>-->
   
-                <div id ="text" style="display: block;">
-                  <p> You don't have any package yet! </p>
-                </div>
-      </ion-col>
-    </ion-row>
+        <div id ="text" style="display: block;">
+          <p id ="textP"> You don't have any package yet! </p>
+        </div>
+
+       </ion-col>
+     </ion-row>
 
   <div id = "addPackage" style="display: none;">
-      <ion-row>
-          <ion-col>
-              <ion-card>                
-                  <ion-item id="addPackageItem" lines="none" color ="red">
-                    <p id ="count" > {{packages.length + 1}} </p>
-                     <ion-label>     
-                         <ion-card-header id ="addPackageHeader">
-                             <ion-card-title> &lt;Name&gt; </ion-card-title>
-                           </ion-card-header>
-                            
-                          <!--<ion-card-content>
-                              Status: &lt;state***&gt;
-                          </ion-card-content>-->
+    <ion-row>
+      <ion-col>
+        <ion-card>                
+          <ion-item id="addPackageItem" lines="none" color ="red">
+           <p class ="count" > {{packages.length + 1}} </p>
+           <ion-label>     
+            <ion-card-header id ="addPackageHeader">
+              <ion-card-title style="color: rgb(202, 201, 201);" id ="titleInfo"> Complete the info: </ion-card-title>
+            </ion-card-header>
+           </ion-label>
+         </ion-item>
 
+         <form >
+          <div padding>
+            <p id = "formtext"> Package Name </p> 
+            <ion-item lines="none" class ="itemform">
+              <ion-input id = "nameInput" [(ngModel)]="name" [ngModelOptions]="{standalone: true}" type = "text" placeholder = "Package Name" required></ion-input>
+            </ion-item>
 
-                        </ion-label>
-                    </ion-item>
+            <p id = "formtext"> Pickup Address</p> 
+            <ion-item lines="none" class ="itemform">
+              <ion-input id = "pickupAddressInput" [(ngModel)]="pickupAddress" [ngModelOptions]="{standalone: true}" type = "text" placeholder = "Pickup Address" required></ion-input>
+            </ion-item>
 
-                    <form >
-                         <div padding>
-                 
+            <p id = "formtext"> Delivery Address </p> 
+            <ion-item lines="none"  class ="itemform">
+             <ion-input id = "deliveryAddressInput" [(ngModel)]="deliveryAddress" [ngModelOptions]="{standalone: true}" type = "text" placeholder = "Delivery Address" required></ion-input>
+            </ion-item>
 
-                          <p id = "formtext">Package Name </p> 
-                          <ion-item class ="itemform">
-                            <ion-input id = "nameInput" [(ngModel)]="name" [ngModelOptions]="{standalone: true}" type = "text" placeholder = "Package Name" required></ion-input>
-                          </ion-item>
+            <p id = "formtext"> Receiver's Full Name </p> 
+            <ion-item lines="none"  class ="itemform">
+              <ion-input id = "receiverName" [(ngModel)]="receiverName" type = "text" [ngModelOptions]="{standalone: true}" placeholder = "Receiver's Full Name" required></ion-input>
+            </ion-item>
 
-            
-                           <p id = "formtext">Pickup Address</p> 
-                        
-                          <ion-item class ="itemform">
-                            <ion-input id = "pickupAddressInput" [(ngModel)]="pickupAddress" [ngModelOptions]="{standalone: true}" type = "text" placeholder = "Pickup Address" required></ion-input>
-                          </ion-item>
-                 
-                          <p id = "formtext">Delivery Address </p> 
-                          <ion-item>
-                            <ion-input id = "deliveryAddressInput" [(ngModel)]="deliveryAddress" [ngModelOptions]="{standalone: true}" type = "text" placeholder = "Delivery Address" required></ion-input>
-                          </ion-item>
+            <p id = "formtext">Receiver's Phone Number </p> 
+            <ion-item lines="none"  class ="itemform">
+              <ion-input id = "receiverPhoneNumber" [(ngModel)]="receiverPhoneNumber" [ngModelOptions]="{standalone: true}" type = "text" placeholder = "Receiver's Phone Number" required></ion-input>
+            </ion-item>
 
-                          <p id = "formtext">Receiver's Full Name </p> 
-                          <ion-item>
-                            <ion-input id = "receiverName" [(ngModel)]="receiverName" type = "text" [ngModelOptions]="{standalone: true}" placeholder = "Receiver's Full Name" required></ion-input>
-                          </ion-item>
-
-                          <p id = "formtext">Receiver's Phone Number </p> 
-                          <ion-item>
-                            <ion-input id = "receiverPhoneNumber" [(ngModel)]="receiverPhoneNumber" [ngModelOptions]="{standalone: true}" type = "text" placeholder = "Receiver's Phone Number" required></ion-input>
-                          </ion-item>
-
-                         </div>
-                      </form>
-
-                      <ion-row>
-                        <ion-col>
-                          <!--
-                            <p id = "availableTime">Available Pickup Hours</p> 
-                            <ion-item>
-                                <ion-label>Add Pickup Hours</ion-label>
-                                <ion-datetime displayFormat="DD/MM HH:mm -" placeholder="Select Date"></ion-datetime>
-                                <ion-datetime displayFormat=" HH:mm " placeholder="Select Date"></ion-datetime>
-                              </ion-item> -->
-                              <p id = "availableTime">Available Pickup Hours</p> 
-
-                              <ion-item id ="timeItem" lines="none" color="red">
-                                  <ion-label id ="timeLabel">     
-                                      <ion-card-content id ="timeContent">
-                            
-                                          <ion-item id ="timeItem2">
-                                              <ion-datetime displayFormat="MMMM DD, DDDD" placeholder="Select Day"></ion-datetime>
-                                              <ion-datetime displayFormat="HH:mm - "  placeholder="Select Start Hour"></ion-datetime>
-                                              <ion-datetime displayFormat=" HH:mm "  placeholder="Select End Hour"></ion-datetime>
-                                            </ion-item>
-
-                                      </ion-card-content>
-                                    </ion-label>
-                  
-                                    <ion-button item-right slot="start" (click)="addHoursForm()">
-                                        <ion-icon name="close-circle"></ion-icon>
-                                    </ion-button>
-                                </ion-item>
-
-                               <!-- <ion-item id ="timeItem" lines="none" color="red">
-                                    <ion-label id ="timeLabel">     
-                                        <ion-card-content id ="timeContent">
-                              
-                                            <ion-item id ="timeItem2">
-                                                <ion-datetime displayFormat="MMMM DDDD," placeholder="Select Day"></ion-datetime>
-                                                <ion-datetime displayFormat="HH:mm - "  placeholder="Select Start Hour"></ion-datetime>
-                                                <ion-datetime displayFormat=" HH:mm "  placeholder="Select End Hour"></ion-datetime>
-                                              </ion-item>
-  
-                                        </ion-card-content>
-                                      </ion-label>
-                    
-                                      <ion-button item-right slot="start" (click)="addHoursForm()">
-                                          <ion-icon name="close-circle"></ion-icon>
-                                      </ion-button>
-                                  </ion-item>-->
-                              
-                                  <ion-button id="addpickuphour" (click)="addPickupHour()" type = "submit"expand="block">Add Pickup Hour</ion-button>
-
-                        </ion-col>
-                      </ion-row>
-                     
-                  </ion-card>
-       
-                  <div id ="text">
-                      <p> *The driver will also receive your contact information, so he can contact you for needed details </p>
-                    </div>
-            </ion-col>
-          </ion-row>
-    
-     </div>
-
-
-     <div id = "editPackage" style="display: none;">
-        <ion-row>
-            <ion-col>
-                <ion-card id ="editPackageCard">   
-
-                    <ion-item id="editPackageItem" lines="none" color ="red">
-                        <p id ="count" > 1 </p>
-                        <ion-label>     
-                           <ion-card-header id ="editPackageHeader">
-                               <ion-card-title> name  </ion-card-title>
-                             </ion-card-header>
-                              
-                            <ion-card-content> state </ion-card-content>
-  
-                          </ion-label>
-                      </ion-item>
-  
-                      <form >
-                        <div padding>
-                          <p id = "formtext">Package Name </p> 
-                          <ion-item class ="itemform">
-                            <ion-input type = "text" placeholder = "Package Name" value = "$Name" required></ion-input>
-                          </ion-item>
-  
-              
-                             <p id = "formtext">Pickup Address</p> 
-                          
-                            <ion-item class ="itemform">
-                              <ion-input type = "text" placeholder = "Pickup Adress"   value = "$Address" required></ion-input>
-                            </ion-item>
-                   
-                            <p id = "formtext">Delivery Address </p> 
-                            <ion-item>
-                              <ion-input type = "text" placeholder = "Deliver Adress"  value = "$Address" required></ion-input>
-                            </ion-item>
-  
-                            <p id = "formtext">Receiver's Full Name </p> 
-                            <ion-item>
-                              <ion-input type = "text" placeholder = "Receiver's Full Name" value = "$Full Name"  required></ion-input>
-                            </ion-item>
-  
-                            <p id = "formtext">Receiver's Phone Number </p> 
-                            <ion-item>
-                              <ion-input type = "text" placeholder = "Receiver's Phone Number" value = "$Phone Number"  required></ion-input>
-                            </ion-item>
-  
-                           </div>
-                        </form>
-  
-                        <ion-row>
-                          <ion-col>
-                                <p id = "availableTime">Available Pickup Hours</p> 
-  
-                                <ion-item id ="timeItem" lines="none" color="red">
-                                    <ion-label id ="timeLabel">     
-                                        <ion-card-content id ="timeContent">
-                              
-                                            <ion-item id ="timeItem2">
-                                                <ion-datetime displayFormat="MMMM DD, DDDD" value="2019-01-20" placeholder="Select Day"></ion-datetime>
-                                                <ion-datetime displayFormat="HH:mm - " value="12:20" placeholder="Select Start Hour"></ion-datetime>
-                                                <ion-datetime displayFormat=" HH:mm " value ="15:40" placeholder="Select End Hour"></ion-datetime>
-                                              </ion-item>
-  
-                                        </ion-card-content>
-                                      </ion-label>
-                    
-                                      <ion-button item-right slot="start" (click)="addHoursForm()">
-                                          <ion-icon name="close-circle"></ion-icon>
-                                      </ion-button>
-                                  </ion-item>
-  
-                                  <ion-item id ="timeItem" lines="none" color="red">
-                                      <ion-label id ="timeLabel">     
-                                          <ion-card-content id ="timeContent">
-                                
-                                              <ion-item id ="timeItem2">
-                                                  <ion-datetime displayFormat="MMMM DD, DDDD" value="2019-12-15" placeholder="Select Day"></ion-datetime>
-                                                  <ion-datetime displayFormat="HH:mm - " value="12:20" placeholder="Select Start Hour"></ion-datetime>
-                                                  <ion-datetime displayFormat=" HH:mm " value ="15:40" placeholder="Select End Hour"></ion-datetime>
-                                                </ion-item>
-    
-                                          </ion-card-content>
-                                        </ion-label>
-                      
-                                        <ion-button item-right slot="start" (click)="addHoursForm()">
-                                            <ion-icon name="close-circle"></ion-icon>
-                                        </ion-button>
-                                    </ion-item>
-                                
-                                    <ion-button id="addpickuphour" (click)="addPickupHour()" type = "submit"expand="block">Add Pickup Hour</ion-button>
-                                    <ion-button id="cancelEdit" color ="--ion-color-success-shade" (click)="cancelEdit()" type = "submit"expand="block">Cancel Edit</ion-button>
-                          </ion-col>
-                        </ion-row>
-                      </ion-card>
-         
-                    <div id ="text">
-                        <p> *The driver will also receive your contact information, so he can contact you for needed details </p>
-                      </div>
-              </ion-col>
-            </ion-row>
-      
-       </div>
-  </ion-grid>
-
-  </ion-content>
-
-  <ion-footer no-border >
-   
-      <ion-toolbar id="addbutton">
-          <div id ="addButton" padding>
-              <ion-button id="addpackage" color ="--ion-color-success-shade" (click)="addPackageButton()" expand="block" size="large"  type = "submit" expand="block" value="Add Package">Add Package</ion-button>
            </div>
+          </form>
 
-     </ion-toolbar>
-</ion-footer>
+          <ion-row>
+           <ion-col>
+            <p id = "availableTime"> Available Pickup Hours </p> 
+            <ion-item id ="timeItem" lines="none" color="red">
+              <ion-label id ="timeLabel">  
+
+               <ion-card-content id ="timeContent">
+                <ion-item class ="timeItem2">
+                  <ion-datetime displayFormat="MMMM DD, DDDD" placeholder="Select Day"></ion-datetime>
+                </ion-item >
+                <ion-item class= "timeItem2">
+                  <ion-datetime displayFormat="HH:mm"  placeholder="Select Start Hour"></ion-datetime>
+                </ion-item>
+                <ion-item class = "timeItem2">
+                  <ion-datetime displayFormat=" HH:mm"  placeholder="Select End Hour"></ion-datetime>
+                </ion-item>
+               </ion-card-content>
+              </ion-label>
+                  
+              <ion-button item-right slot="start" (click)="addHoursForm()">
+                <ion-icon name="close-circle"></ion-icon>
+              </ion-button>
+            </ion-item>
+
+            <ion-button id="addpickuphour" (click)="addPickupHour()" type = "submit"expand="block">Add Pickup Hour</ion-button>
+
+          </ion-col>
+        </ion-row>
+
+        </ion-card>
+
+      
+      </ion-col>
+    </ion-row>
+  </div>
   
+  <div id ="textDriver" style="display: none">
+    <p class = "textP2"> *The driver will also receive your contact information, so he can contact you for needed details </p>
+  </div>
+
+
+  <div id = "editPackage" style="display: none;">
+   <ion-row>
+    <ion-col>
+      <ion-card id ="editPackageCard">   
+        <ion-item id="editPackageItem" lines="none" color ="red">
+          <p class ="count" > 1 </p>
+          <ion-label>     
+            <ion-card-header id ="editPackageHeader">
+              <ion-card-title> name  </ion-card-title>
+            </ion-card-header>                  
+            <ion-card-content> state </ion-card-content>
+          </ion-label>
+        </ion-item>
+  
+        <form >
+         <div padding>
+          <p id = "formtext">Package Name </p> 
+          <ion-item class ="itemform">
+           <ion-input type = "text" placeholder = "Package Name" value = "$Name" required></ion-input>
+          </ion-item>
+          
+          <p id = "formtext">Pickup Address</p> 
+          <ion-item class ="itemform">
+           <ion-input type = "text" placeholder = "Pickup Adress"   value = "$Address" required></ion-input>
+          </ion-item>
+                   
+          <p id = "formtext">Delivery Address </p> 
+          <ion-item>
+            <ion-input type = "text" placeholder = "Deliver Adress"  value = "$Address" required></ion-input>
+          </ion-item>
+  
+          <p id = "formtext">Receiver's Full Name </p> 
+          <ion-item>
+           <ion-input type = "text" placeholder = "Receiver's Full Name" value = "$Full Name"  required></ion-input>
+          </ion-item>
+  
+          <p id = "formtext">Receiver's Phone Number </p> 
+          <ion-item>
+            <ion-input type = "text" placeholder = "Receiver's Phone Number" value = "$Phone Number"  required></ion-input>
+          </ion-item>
+  
+         </div>
+        </form>
+  
+        <ion-row>
+          <ion-col>
+            <p id = "availableTime">Available Pickup Hours</p>
+            <ion-item id ="timeItem" lines="none" color="red">
+              <ion-label id ="timeLabel">     
+                <ion-card-content id ="timeContent">
+                  <ion-item lines="none" class ="timeItem2">
+                    <ion-datetime displayFormat="MMMM DD, DDDD" value="2019-01-20" placeholder="Select Day"></ion-datetime>
+                  </ion-item>
+
+                  <ion-item lines="none" class ="timeItem2">
+                   <ion-datetime displayFormat="HH:mm" value="12:20" placeholder="Select Start Hour"></ion-datetime>
+                  </ion-item>
+
+                  <ion-item class ="timeItem2">
+                   <ion-datetime displayFormat=" HH:mm " value ="15:40" placeholder="Select End Hour"></ion-datetime>
+                  </ion-item>
+  
+                </ion-card-content>
+              </ion-label>
+                    
+              <ion-button item-right slot="start" (click)="addHoursForm()">
+                <ion-icon name="close-circle"></ion-icon>
+              </ion-button>
+            </ion-item>
+                                
+            <ion-button id="addpickuphour" (click)="addPickupHour()" type = "submit"expand="block">Add Pickup Hour</ion-button>
+            <ion-button id="cancelEdit" color ="--ion-color-success-shade" (click)="cancelEdit()" type = "submit"expand="block">Cancel Edit</ion-button>
+            <ion-button id="cancelPackage" color ="--ion-color-success-shade" (click)="cancelPackage()" type = "submit" >Cancel Package</ion-button>
+         
+          </ion-col>
+         </ion-row>
+        </ion-card>
+         
+        <div id ="text">
+           <p class="textP2"> *The driver will also receive your contact information, so he can contact you for needed details </p>
+        </div>
+ 
+        
+
+       </ion-col>
+      </ion-row>   
+    </div>
+ </ion-grid>
+
+ <div id="space"></div>
+</ion-content>
+
+  
+<ion-footer no-border id="footer">
+    <ion-toolbar id="addbutton">
+      <div id ="addButton" padding>
+        <ion-button id="addpackage" color ="--ion-color-success-shade" (click)="addPackageButton()" expand="block" size="large"  type = "submit" expand="block" value="Add Package">Add Package</ion-button>
+      </div>
+  
+    </ion-toolbar>
+  </ion-footer>
