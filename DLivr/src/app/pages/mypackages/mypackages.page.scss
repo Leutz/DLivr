@@ -1,7 +1,8 @@
 $height100 : 100%;
 $green-color: rgb(83, 167, 83);
 $black-color: rgb(41, 41, 41);
-$white-color: red;
+$red-color: rgb(194, 61, 61);
+$grey-color: rgb(114, 114, 114);
 
 ion-content{
     align-content: center;
@@ -39,6 +40,7 @@ ion-card-content{
     color: rgb(73, 73, 73);
 }
 
+
 ion-item{
     background:rgb(219, 219, 219);
 }
@@ -64,24 +66,28 @@ ion-card-header{
     background: rgb(219, 219, 219);
 }
 
+#editPackage ion-card-header{
+    background: rgb(92,92,92)
+}
+
 #ion-card-id-package
 {
     height: 70px;
 }
 
-#addPackageItem{
+#addPackageItem, #editPackageItem{
     background: rgb(92, 92, 92);
 }
 
-#addPackageHeader{
+#addPackageHeader, #editPackageHeader{
     background: rgb(92, 92, 92);
     font-size: 2px;
 }
 
-#addPackage{
+#addPackage, #editPackage{
     display: flex;
     flex-direction: column;
-     justify-content: center;
+    justify-content: center;
     align-items: center;
     position: relative;
     left: 9%;
@@ -89,6 +95,10 @@ ion-card-header{
 
 #addPackage ion-card{
     width: 80%;
+}
+
+#editPackage ion-card{
+    width:80%;
 }
 
 p{
@@ -116,6 +126,27 @@ p{
 
 #ionButtonIcon{
     background: $black-color;
+    border-radius: 2px;
+}
+
+#ionDeleteButton{
+    background: $red-color;
+    border-radius: 2px;
+}
+
+
+#dontAddPackage, #dontSaveEditPackage{
+    background: $red-color;
+    border-radius: 5px;
+}
+
+#addpickuphour{
+    background: $black-color;
+    border-radius: 2px;
+}
+
+#deletepickuphour{
+    background: $grey-color;
     border-radius: 2px;
 }
 
@@ -176,19 +207,21 @@ p{
 
    
     #addPackage ion-card{
-    width: 95%;
+        width: 95%;
     }     
 
-    
-    #addPackage{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    left: 0px;
+    #editPackage ion-card{
+        width: 95%;
     }
 
+    #addPackage, #editPackage{
+         display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        left: 0px;
+    }
     
     .timeItem2
     {
@@ -198,6 +231,16 @@ p{
         flex-wrap: wrap;
         flex-direction: column;
     }
+
+    ion-card-title{
+        margin-top: -5px;
+        font-size: 17px;
+    }
+
+    ion-card-content{
+        margin-top: -10px;
+        font-size: 12px;
+    }
 } 
 
 
@@ -206,18 +249,11 @@ p{
     background: rgb(92, 92, 92);
 }
 
-#editPackageCard {
+#editPackage ion-card{
     height:100%;
     background: rgb(92, 92, 92);
 }
 
-#editPackageItem{
-    background: rgb(92, 92, 92);
-}
-
-#editPackageHeader{
-    background: rgb(92, 92, 92);
-}
 
 #cancelEdit{
     background: rgb(177, 66, 66);

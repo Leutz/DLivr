@@ -16,6 +16,13 @@ export class MypackagesPage implements OnInit {
   receiverName: string = "";
   receiverPhoneNumber: string = "";
 
+  pickupHours = [];
+  pickupDay : string = "";
+  pickupStartHour: string = "";
+  pickupEndHour: string = "";
+
+  selectedCardNumber;
+
   constructor(private menuCtrl: MenuController) { 
   }
 
@@ -40,10 +47,13 @@ export class MypackagesPage implements OnInit {
     var divDriverText = document.getElementById("textDriver")
     var divAdd = document.getElementById("addPackage");
     var buttonAdd = document.getElementById("addpackage");
+    var divtextDriver2 = document.getElementById("textDriver2");
     
     console.log(buttonAdd.textContent);
 
     this.closeExistingPackage();
+
+    divtextDriver2.style.display = "none";
 
     if (buttonAdd.textContent == "Add Package")
     {
@@ -56,7 +66,7 @@ export class MypackagesPage implements OnInit {
     {
       buttonAdd.textContent = "Add Package";
       divDriverText.style.display = "none";
-      
+
       var nameInput = document.getElementById("nameInput");
       var pickupAddressInput = document.getElementById("pickupAddressInput");
       var deliveryAddressInput = document.getElementById("deliveryAddressInput");
@@ -74,24 +84,59 @@ export class MypackagesPage implements OnInit {
     }
   }
 
-  editPackageForm(){
+  editPackageForm(i){
     var divEdit = document.getElementById("editPackage");
     var buttonEdit = document.getElementById("addpackage");
+    var divtextDriver2 = document.getElementById("textDriver2");
 
     this.closeExistingPackage();
 
     divEdit.style.display = "block";
     buttonEdit.textContent = "Save";
+    divtextDriver2.style.display = "block";
+
+    console.log("package.number = " + i.toString());
   }
 
   cancelEdit(){
 
     var divEdit = document.getElementById("editPackage");
     var buttonEdit = document.getElementById("addpackage");
+    var divtextDriver2 = document.getElementById("textDriver2");
 
     this.closeExistingPackage();
 
-    buttonEdit.textContent = "Add Package"
+    buttonEdit.textContent = "Add Package";
+    divtextDriver2.style.display = "none";
+  }
+
+  dontSaveEditPackage(){
+    var buttonEdit = document.getElementById("addpackage");
+    var divtextDriver2 = document.getElementById("textDriver2");
+
+      this.closeExistingPackage();
+
+    buttonEdit.textContent = "Add Package";
+    divtextDriver2.style.display = "none";
+  }
+
+  dontAddPackage(){
+    var buttonAddPackage = document.getElementById("addpackage");
+    var divDriverText = document.getElementById("textDriver");
+    this.closeExistingPackage();
+
+    buttonAddPackage.textContent = "Add Package";
+    divDriverText.style.display = "none";
+  }
+
+  addPickupHour()
+  { 
+    this.pushItemTime(
+    this.pickupDay,
+    this.pickupStartHour,
+    this.pickupEndHour
+    );
+    
   }
 
   pushCard(name, pickupAddress, deliveryAddress, receivedName, receiverPhoneNumber){
@@ -118,15 +163,14 @@ export class MypackagesPage implements OnInit {
     this.receiverPhoneNumber = "";
   }
 
-  /*functionDO(){
-    this.packages.push(
+  pushItemTime(pickupDay, pickupStartHour, pickupEndHour){
+    this.pickupHours.push(
       {
-        "number": (this.packages.length + 1).toString(),
-        "name": "<Name>",
-        "status": "<Status>",
-
-        // etc stuff here
+        // name (as string) : actual value
+        "pickupDay" : pickupDay,
+        "pickupStartHour" : pickupStartHour,
+        "pickupEndHour" : pickupEndHour,
       }
     )
-  }*/
+  };
 }
