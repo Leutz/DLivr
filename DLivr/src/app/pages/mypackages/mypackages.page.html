@@ -13,7 +13,7 @@
     <ion-row>
       <ion-col id = "cardList">
         <ion-card *ngFor = "let package of packages" id = "ion-card-id-package">
-          <ion-card-content no-padding>
+          <ion-card-content id ="ioncardcontent" no-padding>
           <ion-item id="cardListItem" lines="none" color="blue">
             <p class ="count" > {{package.number}} </p>
             <ion-label id ="cardListLabel">     
@@ -28,7 +28,7 @@
               <ion-icon name="create"></ion-icon>
             </ion-button>
 
-            <ion-button id ="ionDeleteButton" color ="--ion-color-success-shade" slot="end" (click)="deletePackage()">
+            <ion-button id ="ionDeleteButton" color ="--ion-color-success-shade" slot="end" (click)="deletePackage(package.number)">
               <ion-icon name="trash"></ion-icon>
             </ion-button>
 
@@ -56,7 +56,7 @@
            </ion-label>
          </ion-item>
 
-         <form >
+         <form (ngSubmit)="submitForm(form.value)">
           <div padding>
             <p id = "formtext"> Package Name </p> 
             <ion-item lines="none" class ="itemform">
@@ -130,13 +130,13 @@
         <ion-col>
           <ion-card>                
               <ion-item id="addPackageItem" lines="none" color ="red">
-                <p class ="count" > 1 </p>
+                <p class ="count"> {{selectedPackage.number}} </p>
                 <ion-label>     
                   <ion-card-header>
                    <ion-card-title style="color: rgb(202, 201, 201);"> Name </ion-card-title>
                   </ion-card-header>
       
-                  <ion-card-content style="color: rgb(202, 201, 201);"> Status: {{package.status}} ***status </ion-card-content>
+                  <ion-card-content style="color: rgb(202, 201, 201);"> Status: ***status </ion-card-content>
                 </ion-label>
       
               </ion-item>

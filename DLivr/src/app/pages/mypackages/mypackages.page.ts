@@ -21,7 +21,9 @@ export class MypackagesPage implements OnInit {
   pickupStartHour: string = "";
   pickupEndHour: string = "";
 
-  selectedCardNumber;
+  selectedPackage = [{
+    "number": 0
+  }]
 
   constructor(private menuCtrl: MenuController) { 
   }
@@ -84,6 +86,7 @@ export class MypackagesPage implements OnInit {
     }
   }
 
+
   editPackageForm(i){
     var divEdit = document.getElementById("editPackage");
     var buttonEdit = document.getElementById("addpackage");
@@ -95,7 +98,23 @@ export class MypackagesPage implements OnInit {
     buttonEdit.textContent = "Save";
     divtextDriver2.style.display = "block";
 
-    console.log("package.number = " + i.toString());
+    this.selectedPackage = this.packages[i - 1];
+    console.log("i = " + i);
+    console.log("Name = " + this.selectedPackage["name"]);
+    console.log("Number = " + this.selectedPackage["number"]);
+  }
+
+
+  deletePackage(i){
+
+    this.packages.splice(i - 1, 1);
+    console.log("delete package " + (i - 1).toString());
+    
+    for (var x = i - 1; x < this.packages.length ; x++)
+    {
+      this.packages[x].number--;
+    }
+
   }
 
   cancelEdit(){
