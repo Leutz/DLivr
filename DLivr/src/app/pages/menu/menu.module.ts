@@ -27,7 +27,11 @@ const routes: Routes = [
         {
           path: 'payment',
           loadChildren: '../payment/payment.module#PaymentPageModule'
-        }
+        },
+        {
+          path: 'mypackagesdriver',
+          loadChildren: '../mypackagesdriver/mypackagesdriver.module#MypackagesdriverPageModule'
+        },
     ]
   }
  ,

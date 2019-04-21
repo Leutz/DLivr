@@ -89,22 +89,33 @@
           <ion-row>
            <ion-col>
             <p id = "availableTime"> Available Pickup Hours </p> 
-            <ion-item *ngFor ="let pickupHour of pickupHours" id ="timeItem" lines="none" color="red">
+            <ion-item *ngFor ="let pickupHour of pickupHours;let index = index;trackBy:trackByIndex;" id ="timeItem" lines="none" color="red">
 
               <ion-label  id ="timeLabel">  
                <ion-card-content id ="timeContent">
                 <ion-item lines="none" class ="timeItem2">
-                  <ion-datetime displayFormat="MMMM DD, DDDD" placeholder="Day"></ion-datetime>
+                  <ion-datetime displayFormat="MMMM DD, DDDD" placeholder="Day" 
+                    [(ngModel)]="pickupHours[index].pickupDay"
+                    [ngModelOptions]="{standalone: true}"
+                  ></ion-datetime>
                 </ion-item >
+                
                 <ion-item class= "timeItem2">
-                  <ion-datetime displayFormat="HH:mm - "  placeholder="Start Hour"></ion-datetime>
-                  <ion-datetime displayFormat=" HH:mm"  placeholder="End Hour"></ion-datetime>
+                  <ion-datetime displayFormat="HH:mm - " placeholder="Start Hour"
+                    [(ngModel)]="pickupHours[index].pickupStartHour"
+                    [ngModelOptions]="{standalone: true}"
+                  ></ion-datetime>
+                  
+                  <ion-datetime displayFormat=" HH:mm"  placeholder="End Hour"
+                    [(ngModel)]="pickupHours[index].pickupEndHour"
+                    [ngModelOptions]="{standalone: true}"
+                  ></ion-datetime>
                 </ion-item>
             
                </ion-card-content>
               </ion-label>
                   
-              <ion-button id = "deletepickuphour" color ="--ion-color-success-shade" item-right slot="start" (click)="addHoursForm()">
+              <ion-button id = "deletepickuphour" color ="--ion-color-success-shade" item-right slot="start" (click)="deleteHoursForm(selectedpickupHours.id)">
                 <ion-icon name="close-circle"></ion-icon>
               </ion-button>
             </ion-item>
@@ -133,7 +144,7 @@
                 <p class ="count"> {{selectedPackage.number}} </p>
                 <ion-label>     
                   <ion-card-header>
-                   <ion-card-title style="color: rgb(202, 201, 201);"> Name </ion-card-title>
+                   <ion-card-title style="color: rgb(202, 201, 201);"> {{selectedPackage.name}} </ion-card-title>
                   </ion-card-header>
       
                   <ion-card-content style="color: rgb(202, 201, 201);"> Status: ***status </ion-card-content>
@@ -145,27 +156,27 @@
             <div padding>
               <p id = "formtext"> Package Name </p> 
               <ion-item lines="none" class ="itemform">
-                <ion-input id = "nameInput" [(ngModel)]="name" [ngModelOptions]="{standalone: true}" type = "text"  value = "name" placeholder ="hel" required></ion-input>
+                <ion-input id = "nameInput" [(ngModel)]="name" [ngModelOptions]="{standalone: true}" type = "text"  value = "{{selectedPackage.name}}" required></ion-input>
               </ion-item>
   
               <p id = "formtext"> Pickup Address</p> 
               <ion-item lines="none" class ="itemform">
-                <ion-input id = "pickupAddressInput" [(ngModel)]="pickupAddress" [ngModelOptions]="{standalone: true}" type = "text" value ="name" required></ion-input>
+                <ion-input id = "pickupAddressInput" [(ngModel)]="pickupAddress" [ngModelOptions]="{standalone: true}" type = "text" value ="{{selectedPackage.pickupAddress}}" required></ion-input>
               </ion-item>
   
               <p id = "formtext"> Delivery Address </p> 
               <ion-item lines="none"  class ="itemform">
-               <ion-input id = "deliveryAddressInput" [(ngModel)]="deliveryAddress" [ngModelOptions]="{standalone: true}" type = "text" value ="name" required></ion-input>
+               <ion-input id = "deliveryAddressInput" [(ngModel)]="deliveryAddress" [ngModelOptions]="{standalone: true}" type = "text" value ="{{selectedPackage.deliveryAddress}}" required></ion-input>
               </ion-item>
   
               <p id = "formtext"> Receiver's Full Name </p> 
               <ion-item lines="none"  class ="itemform">
-                <ion-input id = "receiverName" [(ngModel)]="receiverName" type = "text" [ngModelOptions]="{standalone: true}" value ="name" required></ion-input>
+                <ion-input id = "receiverName" [(ngModel)]="receiverName" type = "text" [ngModelOptions]="{standalone: true}" value ="{{selectedPackage.receiverName}}" required></ion-input>
               </ion-item>
   
               <p id = "formtext">Receiver's Phone Number </p> 
               <ion-item lines="none"  class ="itemform">
-                <ion-input id = "receiverPhoneNumber" [(ngModel)]="receiverPhoneNumber" [ngModelOptions]="{standalone: true}" type = "text" value ="name" required></ion-input>
+                <ion-input id = "receiverPhoneNumber" [(ngModel)]="receiverPhoneNumber" [ngModelOptions]="{standalone: true}" type = "text" value ="{{selectedPackage.receiverPhoneNumber}}" required></ion-input>
               </ion-item>
   
              </div>
@@ -175,6 +186,7 @@
              <ion-col>
               <p id = "availableTime"> Available Pickup Hours </p> 
 
+              <!--
               <ion-item  id ="timeItem" lines="none" color="red">
                   <ion-label  id ="timeLabel">  
                       <ion-card-content id ="timeContent">
@@ -193,20 +205,20 @@
                      <ion-button id = "deletepickuphour" color ="--ion-color-success-shade" item-right slot="start" (click)="addHoursForm()">
                        <ion-icon name="close-circle"></ion-icon>
                      </ion-button>
-              </ion-item>
+              </ion-item>-->
 
 
-              <ion-item *ngFor ="let pickupHour of pickupHours" id ="timeItem" lines="none" color="red">
+              <ion-item *ngFor ="let pickupHour of selectedPackage.pickupHours" id ="timeItem" lines="none" color="red">
   
                 <ion-label  id ="timeLabel">  
                  <ion-card-content id ="timeContent">
 
                   <ion-item lines="none" class ="timeItem2">
-                    <ion-datetime displayFormat="MMMM DD, DDDD" placeholder="Day"></ion-datetime>
+                    <ion-datetime displayFormat="MMMM DD, DDDD" placeholder="Day" value = "{{pickupHour.pickupDay}}"></ion-datetime>
                   </ion-item >
                   <ion-item class= "timeItem2">
-                    <ion-datetime displayFormat="HH:mm - " placeholder="Start Hour"></ion-datetime>
-                    <ion-datetime displayFormat=" HH:mm"   placeholder="End Hour"></ion-datetime>
+                    <ion-datetime displayFormat="HH:mm - " placeholder="Start Hour" value = "{{pickupHour.pickupStartHour}}"></ion-datetime>
+                    <ion-datetime displayFormat=" HH:mm"   placeholder="End Hour" value = "{{pickupHour.pickupEndHour}}"></ion-datetime>
                   </ion-item>
 
                  </ion-card-content>
