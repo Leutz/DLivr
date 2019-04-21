@@ -1,0 +1,62 @@
+.active-item {
+    border-left: 8px solid rgb(255, 255, 255);
+    --ion-background-color: rgb(53, 53, 53);
+}
+
+ion-title {
+    text-align: center;
+    font-weight: bolder;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: gray;
+}
+
+/*ion-split-pane{
+    width: 80%;
+}*/
+#nearestPack{
+    color: rgb(241, 241, 241);
+    font-size: 1.2vw;
+}
+#label1{
+    background-color: rgb(224, 224, 224);
+}
+#acceptCard{
+    color : black;
+}
+#TeddyBear{
+    color: rgb(250, 102, 33);
+}
+#distance{
+    padding-top: 0px;
+}
+#pickup,#deliver,#pickupHours{
+    font-size: 1.1vw;
+    font-weight: bold;
+}
+ion-button{
+    background-color: rgb(83, 233, 95);
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 600px) {
+    
+    #nearestPack{
+        font-size:  1em;
+    }
+    #pickup,#deliver,#pickupHours{
+        font-size: 1em;
+    }
+    // #pickupAddress,#deliverAddress{
+    //     font-size: 0.9em;
+    //     width: 60%;
+    //     margin: 0 auto;
+    // }
+    // ion-card-content{
+    //  word-break: break-all;
+    //    width: 90%;
+    // }
+    #deliverAddress{
+        overflow-wrap: break-word;
+        width: 20%;
+    }
+}

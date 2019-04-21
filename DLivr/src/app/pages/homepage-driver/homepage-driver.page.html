@@ -1,0 +1,95 @@
+<ion-header>
+    <meta name="viewport" content="width=device-width">
+  <ion-toolbar>
+    <ion-title>Homepage - Driver</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+      <ion-grid id ="myDriverPackages">
+  
+          <ion-row>
+            <ion-col id = "cardList">
+                <div id ="text">
+                    <p id ="nearestPack"> Nearest packages </p>
+                  </div>
+              <ion-card >
+                <ion-item  id="label1" lines="none" color="grey">
+                    
+                  <ion-label > 
+                      <!-- <ion-card-content > -->
+                          <ion-card-title id="TeddyBear">TeddyBear from Alina</ion-card-title>  
+                           <!-- </ion-card-content>     -->
+                           <!-- <ion-card-content > -->
+                              <ion-text id="distance">Distance: 200m</ion-text><br/><br/>
+                             <!-- </ion-card-content> -->
+                    <ion-card-content no-padding >
+                   <ion-text id="pickup">  Pickup Address: </ion-text> 
+                   <ion-text id="pickupAddress"> Bulevardul Carol I nr. 31</ion-text>
+                    </ion-card-content>
+                    <ion-card-content no-padding >
+                   <ion-text id="deliver">  Deliver Address: </ion-text>
+                   <ion-text id="deliverAddress"> Super Copou</ion-text>
+                    </ion-card-content>
+      
+                    <ion-card-content no-padding >
+                        <br/> <ion-text id="pickupHours"> Available Pickup Hours</ion-text>
+                    </ion-card-content>
+                    <ion-card-content no-padding>
+                       <ion-text>Monday, 12:30 - 14:00</ion-text> 
+                      </ion-card-content>
+                      <ion-card-content no-padding>
+                          <ion-text>Thurday, 12:30 - 14:00 , 16:30 - 17:30</ion-text>
+                        </ion-card-content>
+                        <ion-button  size="large" id="acceptCard" (click)="accept()" expand="full" fill="clear" >Accept</ion-button>
+                  </ion-label>
+                  
+                </ion-item>
+              
+              </ion-card>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+              <ion-col id = "cardList">
+                <ion-card >
+                  <ion-item  id="label1" lines="none" color="grey">
+                      
+                    <ion-label > 
+                        <!-- <ion-card-content > -->
+                            <ion-card-title id="TeddyBear">School stuff from Bob</ion-card-title>  
+                             <!-- </ion-card-content>     -->
+                             <!-- <ion-card-content > -->
+                                <ion-text id="distance">Distance: 300m</ion-text><br/><br/>
+                               <!-- </ion-card-content> -->
+                      <ion-card-content no-padding >
+                     <ion-text id="pickup">  Pickup Address: </ion-text> 
+                     <ion-text id="pickupAddress"> str. Anastasie Panu nr. 60</ion-text>
+                      </ion-card-content>
+                      <ion-card-content id="breakingwords" no-padding >
+                     <ion-text id="deliver">  Deliver Address: </ion-text>
+                     <ion-text id="deliverAddress"> str. Alexandru Lapusneanu nr. 7-9 </ion-text>
+                      </ion-card-content>
+        
+                      <ion-card-content no-padding >
+                          <br/> <ion-text id="pickupHours"> Available Pickup Hours</ion-text>
+                      </ion-card-content>
+                      <ion-card-content no-padding>
+                         <ion-text>Monday, 12:30 - 14:00</ion-text> 
+                        </ion-card-content>
+                        <ion-card-content no-padding>
+                            <ion-text>Thurday, 12:30 - 14:00 , 16:30 - 17:30</ion-text>
+                          </ion-card-content>
+                          <ion-button  size="large" id="acceptCard" (click)="go()" expand="full" fill="clear" >Accept</ion-button>
+                    </ion-label>
+                    
+                  </ion-item>
+                
+                </ion-card>
+              </ion-col>
+            </ion-row>
+        
+        </ion-grid>
+</ion-content>
+
