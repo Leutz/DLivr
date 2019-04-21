@@ -17,6 +17,12 @@ h3{
 #save,#cancel{
    margin: auto;
 }
+#edit{
+    display: none;
+}
+#cancelEdit,#delete{
+    display: inline-block;
+}
 
 #pCardNumber{
     color: red;

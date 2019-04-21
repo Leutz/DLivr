@@ -44,20 +44,41 @@ export class PaymentPage implements OnInit {
      (<HTMLInputElement>document.getElementById('zipcode')).value= "";
      
   }
-
+  // cancelEdit(){
+  //   var e = document.getElementById("edit");
+  //   e.style.display = "none";
+  // }
+  
   save(){
     var x = document.getElementById("formular");
     var y = document.getElementById("addCard");
     var w = document.getElementById("pCardNumber");
-    var i = document.getElementById("icon");
+    var e = document.getElementById("edit");
+    var del = document.getElementById("delete");
+    var exit = document.getElementById("cancelEdit");
     var str1 = "**** ";
-  
+
+    // var button = document.createElement("button");
+    // button.innerHTML = "Edit";
+    // button.style.backgroundColor = "transparent";
+    // button.style.outline = "none";
+
+    // button.addEventListener ("click", function() {
+    //   e.style.display = "block";
     
-    var button = document.createElement("button");
-    button.innerHTML = "Edit";
-    button.addEventListener ("click", function() {
-      alert("edit zone");
-    });
+    // //  button.innerHTML = "";
+    //   button.appendChild(e);
+    //   // button.appendChild(exit);
+    // });
+    // exit.addEventListener ("click", function(){
+      
+    //   del.style.display = "none";
+    //   exit.style.display = "none";
+    //  // 
+    //   button.innerHTML = "Edit";
+    //   button.style.display = "block";
+
+    // });
 
       var listOfCards = document.getElementById('cards');
       var cardNr = (<HTMLInputElement>document.getElementById('cardNumber')).value;
@@ -72,16 +93,31 @@ export class PaymentPage implements OnInit {
         entry.style.color = "grey";
      
         listOfCards.appendChild(entry);
-        listOfCards.appendChild(button);
+       // listOfCards.appendChild(button);
         var br = document.createElement("br");
         listOfCards.appendChild(br);
+        entry.addEventListener("click", function(){
+       // alert("edit");
+       if(e.style.display = "none"){
+        e.style.display = "block";
+        entry.appendChild(e);
+       } else {
+        e.style.display = "none";
+        entry.removeChild(e);
+       }
+      
+        });
+        // exit.addEventListener("click", function(){
+        //   // alert("edit");
+        //    var str2 = "";
+        //   entry.replaceChild(del,e);
+        //    });
 
-
-     // button.style.backgroundColor= "transparent";
-        button.style.color = "grey";
-        button.style.cssFloat = "right";
+        //button.style.backgroundColor= "transparent";
+        //button.style.color = "grey";
+        //button.style.cssFloat = "right";
         entry.style.display = "inline-block";
-        button.style.display = "inline-block";
+        //button.style.display = "inline-block";
         x.style.display = "none";
         y.style.display = "block";
         listOfCards.style.display = "block";
@@ -93,7 +129,7 @@ export class PaymentPage implements OnInit {
         (<HTMLInputElement>document.getElementById('cvv')).value= "";
         (<HTMLInputElement>document.getElementById('country')).value= "";
         (<HTMLInputElement>document.getElementById('zipcode')).value= "";
-       
+        (<HTMLInputElement>document.getElementById('e')).value= "";
 
       }else{
         x.style.display = "block";
@@ -101,7 +137,6 @@ export class PaymentPage implements OnInit {
         listOfCards.style.display = "none";
         w.style.display = "block";
       }
-    
   }
-  
+
 }
