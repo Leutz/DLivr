@@ -1,0 +1,82 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button color="light"></ion-menu-button>
+          </ion-buttons>
+      <ion-title>MY PACKAGES DRIVER</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content>
+  <ion-grid id ="myPackagesDriver">
+  
+    <ion-row>
+      <ion-col id = "cardList">
+        <ion-card id = "ion-card-id-package" *ngFor="let package of packages">
+          <ion-card-content id ="ioncardcontent" no-padding>
+           <ion-item id="cardListItem" lines="none" color="blue">
+
+            <ion-label id ="cardListLabel">     
+
+              <ion-card-header>
+                <ion-card-title> {{package.name}} from {{package.receiverName}} </ion-card-title>
+                <ion-card-subtitle> Distance: 200 m </ion-card-subtitle>
+              </ion-card-header>
+              <br>
+
+             <ion-card-content no-padding> 
+                <ion-text class="textForm">  Pickup Address: </ion-text> 
+                <ion-text id="pickupAddress">  {{package.pickupAddress}} </ion-text>
+              </ion-card-content>
+              <br>
+              
+              <!--<ion-item lines = "none"> Pickup Address: {{package.pickupAddress}} </ion-item>
+              <ion-item lines = "none"> Delivery Address:  {{package.deliveryAddress}} </ion-item>
+              <ion-item lines = "none"> Available Pickup Hours: {{package.pickupHours[0].pickupDay}}</ion-item>
+              <ion-item lines = "none"> Contact Package Sender: number</ion-item>
+              <ion-item lines = "none"> Contact Package Receiver: number</ion-item> -->
+
+
+              <ion-card-content no-padding > 
+                <ion-text class="textForm">  Deliver Address: </ion-text> 
+                <ion-text id="deliverAddress">  {{package.deliveryAddress}} </ion-text> 
+              </ion-card-content>
+
+              <ion-card-content no-padding >
+                <br/> 
+                <ion-text class="textForm"> Available Pickup Hours</ion-text> 
+              </ion-card-content>
+              <ion-card-content padding *ngFor ="let pickupHour of package.pickupHours">
+                <ion-text class = "textForm2"> {{pickupHour.pickupDay}} </ion-text> 
+                <br>
+              </ion-card-content>
+
+    
+              <ion-card-content no-padding>
+                <ion-text class="textForm"> Contact Package Sender: </ion-text> <br>
+                <ion-text class = "textForm2">Name: {{package.receiverName}} </ion-text> <br>
+                <ion-text class = "textForm2">Phone Number: {{package.receiverPhoneNumber}} </ion-text>  
+                <br>
+              </ion-card-content>
+
+              <br>
+              <ion-card-content no-padding>
+                <ion-text class="textForm"> Contact Package Receiver: </ion-text> <br>
+                <ion-text class = "textForm2">Name: {{package.receiverName}} </ion-text> <br>
+                <ion-text class = "textForm2">Phone Number: {{package.receiverPhoneNumber}} </ion-text>  
+                <br>
+              </ion-card-content>
+             
+             </ion-label>
+            </ion-item>
+
+            <ion-button id="markAsDeliveredButton" color = "grey" (click)="markPackageAsDelivered()" type = "submit"  expand="block">Mark as delivered</ion-button>
+            <ion-button id="cancelButton" color ="red" (click)="cancelPackage()" type = "submit" expand="block"> Cancel </ion-button>  
+
+          </ion-card-content>
+        </ion-card>
+       </ion-col>
+     </ion-row>
+
+   </ion-grid>
+</ion-content>
