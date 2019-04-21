@@ -49,7 +49,15 @@ export class PaymentPage implements OnInit {
     var x = document.getElementById("formular");
     var y = document.getElementById("addCard");
     var w = document.getElementById("pCardNumber");
+    var i = document.getElementById("icon");
     var str1 = "**** ";
+  
+    
+    var button = document.createElement("button");
+    button.innerHTML = "Edit";
+    button.addEventListener ("click", function() {
+      alert("edit zone");
+    });
 
       var listOfCards = document.getElementById('cards');
       var cardNr = (<HTMLInputElement>document.getElementById('cardNumber')).value;
@@ -59,13 +67,27 @@ export class PaymentPage implements OnInit {
         var result = str1.concat(subst4);
         var entry = document.createElement('ion-item');
         entry.appendChild(document.createTextNode(result));
+        
+       // entry.appendChild(button);
         entry.style.color = "grey";
+     
         listOfCards.appendChild(entry);
+        listOfCards.appendChild(button);
+        var br = document.createElement("br");
+        listOfCards.appendChild(br);
 
+
+     // button.style.backgroundColor= "transparent";
+        button.style.color = "grey";
+        button.style.cssFloat = "right";
+        entry.style.display = "inline-block";
+        button.style.display = "inline-block";
         x.style.display = "none";
         y.style.display = "block";
         listOfCards.style.display = "block";
         w.style.display = "none";
+      
+        
         (<HTMLInputElement>document.getElementById('cardNumber')).value= "";
         (<HTMLInputElement>document.getElementById('date')).value= "";
         (<HTMLInputElement>document.getElementById('cvv')).value= "";
