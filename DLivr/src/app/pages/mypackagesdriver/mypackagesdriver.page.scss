@@ -1,0 +1,106 @@
+$height100 : 100%;
+$green-color: rgb(83, 167, 83);
+$black-color: rgb(41, 41, 41);
+$red-color: rgb(194, 61, 61);
+$grey-color: rgb(114, 114, 114);
+
+ion-content{
+    align-content: center;
+}
+
+ion-toolbar {
+    --ion-background-color:  rgb(53, 53, 53);
+}
+
+#addbutton{
+    --ion-background-color:rgb(36,35,35);
+}
+
+ion-title{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bolder;
+    color: gray;
+    text-align: center;
+ }
+
+
+ion-grid {
+    width:100%;
+    height: $height100;
+    background: rgb(36, 35, 35);
+}
+
+ion-card-title{
+    color: rgb(255, 136, 0);
+    // font-weight: bolder;
+}
+
+ion-card-subtitle{
+    color: rgb(143, 143, 143);
+    margin-top: -2px;
+    font-size: 13px;
+ }
+ 
+
+ion-card-content{
+    margin-top: -15px;
+    color: rgb(73, 73, 73);
+}
+
+ion-card{
+    background:rgb(219, 219, 219);
+}
+
+
+ion-item{
+    background:rgb(219, 219, 219);
+}
+
+ion-item{
+    --background: rgb(219, 219, 219);
+}
+
+ion-card-header{
+    background: rgb(219, 219, 219);
+}
+
+#markAsDeliveredButton{
+    background: $green-color;
+}
+
+#cancelButton{
+    background: $red-color;
+}
+
+
+@media only screen and (max-width: 700px) {
+    
+    ion-card{
+        width: 95%;
+    }
+ 
+    
+     #myPackagesDriver ion-card{
+         width: 95%;
+     }     
+ 
+     ion-card-title{
+         margin-top: -5px;
+         font-size: 17px;
+     }
+ 
+     ion-card-content{
+         margin-top: -10px;
+         font-size: 12px;
+     }
+ } 
+
+ .textForm{
+    font-weight: bold;
+    margin-left: 14px;
+    padding-bottom: 5px;
+ }
+
+ .textForm2{
+    margin-left: 14px;
+ }
